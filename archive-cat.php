@@ -1,0 +1,26 @@
+<?php
+    get_header();
+?>
+<div class="container">
+    <h2><?php _e('Archive', 'my-basic-theme'); ?></h2>
+<h1> cats archive </h1>
+    <div class="row">
+        <div class="col-md-9 content">
+            <!-- Loop here	 -->
+            <?php if ( have_posts() ) : ?>
+                <!-- Posts  -->
+                <div class="row">
+                    <?php while ( have_posts() ) : the_post(); ?>
+                        <?php get_template_part('loop-templates/content', 'archive'); ?>
+                    <?php endwhile; ?>
+                </div> <!-- End of posts -->
+            <?php endif; ?>
+        </div>
+        <!-- end of posts  -->
+
+        <?php get_sidebar('primary-sidebar'); ?>
+
+    </div>
+</div>
+<?php
+    get_footer();

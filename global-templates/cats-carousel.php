@@ -25,8 +25,10 @@ if ($our_cats->have_posts() ) {
         <div class="container">
             <div class="row">
                <?php while ($our_cats->have_posts()) : $our_cats->the_post(); ?>
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
                 <!-- For each post, include this template part -->
-               <?php get_template_part('loop-templates/content', 'cat'); ?>
+                        <?php get_template_part('loop-templates/content', 'cat-carousel-item'); ?>
 
             <?php endwhile; ?>
             <?php

@@ -1,6 +1,6 @@
 <?php
 /**
- * Cats setup
+ * Storys Carousel
  *
  * @package understrap
  */
@@ -11,18 +11,18 @@ defined( 'ABSPATH' ) || exit;
 
 // get the three newest cats
 
-$our_cats = new WP_Query( [
+$storys = new WP_Query( [
     'post_type'         =>      'our_cats',
     'posts_per_page'    =>      3,
 ]);
 
-$counter = count($our_cats);
+$counter = count($storys);
 
 $count = 0;
 
 
 
-if ($our_cats->have_posts() ) {
+if ($storys->have_posts() ) {
 
 ?>
 
@@ -31,7 +31,7 @@ if ($our_cats->have_posts() ) {
             <div class="row">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                        <?php while ($our_cats->have_posts()) : $our_cats->the_post(); ?>
+                        <?php while ($storys->have_posts()) : $storys->the_post(); ?>
                             <?php
                                 $post_tumbnail = get_the_post_tumbnail_url(get_the_id(),'full');
                             ?>

@@ -16,25 +16,52 @@ $our_cats = new WP_Query( [
     'posts_per_page'    =>      3,
 ]);
 
+$counter = count($our_cats);
+
+$count = 0;
+
+
+
 if ($our_cats->have_posts() ) {
 
 ?>
 
-	<div class="wrapper" id="wrapper-cats">
-
+	<div class="wrapper" id="wrapper-slider">
         <div class="container">
             <div class="row">
-               <?php while ($our_cats->have_posts()) : $our_cats->the_post(); ?>
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                <!-- For each post, include this template part -->
-                        <?php get_template_part('loop-templates/content', 'cat-carousel-item'); ?>
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                        <?php while ($our_cats->have_posts()) : $our_cats->the_post(); ?>
+                            <?php
+                                $post_tumbnail = get_the_post_tumbnail_url(get_the_id(),'full');
+                                        // var_dump($post_tumbnail);
+                            ?>
 
+                            <div class="carousel-item <?php if($count <= 0) {echo "active"; } ?>">
+                                <img class="d-block w-100" src="<?php echo esc_url($post_tumbnail); ?>" alt="<?php the_title(); ?>">
+                                <?php the_title(); ?>
+                            </div>
+                            
+                            <?php
+                            var_dump($count);
+                            $count++;
+                            ?>
+                    
             <?php endwhile; ?>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    </div>
             <?php
            
             wp_reset_postdata();
             ?>
             </div> <!-- row -->
         </div>  <!-- container -->
-	</div>  <!-- wrapper-cats -->
+	</div>  <!-- wrapper-slider -->

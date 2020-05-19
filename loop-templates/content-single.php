@@ -17,13 +17,14 @@ defined( 'ABSPATH' ) || exit;
 
 		<div class="entry-meta">
 
-			<?php understrap_posted_on(); ?>
 
 		</div><!-- .entry-meta -->
 
 	</header><!-- .entry-header -->
 
 	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+
+	<?php the_field('cats_gallery')?>
 
 	<!-- Cats taxanomies Gender and Type-->
 	<div class="cat-taxanomies">
@@ -34,10 +35,17 @@ defined( 'ABSPATH' ) || exit;
                 endforeach; ?>
 				
 				
-            <?php $terms = get_the_terms( $post->ID , 'cat_type' );
+            <?php $terms = get_the_terms( $post->ID , 'cat_town' );
                 foreach($terms as $term) : 
                     echo $term->name;
-                endforeach; ?>
+				endforeach; ?>
+				
+				<?php the_field('cat_name')?>
+				<?php the_field('cat_age')?>
+				<?php the_field('cat_color')?>
+				<?php the_field('cat_weight')?>
+				<?php the_field('cat_adopted_when')?>
+
                 
 	</div>
 	<div class="entry-content">

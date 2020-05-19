@@ -23,6 +23,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php get_template_part( 'global-templates/cats-carousel' ); ?>
 
+<?php get_template_part( 'global-templates/adoptions' ); ?>
+
 <?php get_template_part( 'global-templates/storys-carousel' ); ?>
 
 <div class="wrapper" id="page-wrapper">

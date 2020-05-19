@@ -25,6 +25,21 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
+	<!-- Cats taxanomies Gender and Type-->
+	<div class="cat-taxanomies">
+	
+            <?php $terms = get_the_terms( $post->ID , 'cat_gender' );
+                foreach($terms as $term) : 
+                    echo $term->name;
+                endforeach; ?>
+				
+				
+            <?php $terms = get_the_terms( $post->ID , 'cat_type' );
+                foreach($terms as $term) : 
+                    echo $term->name;
+                endforeach; ?>
+                
+	</div>
 	<div class="entry-content">
 
 		<?php the_content(); ?>

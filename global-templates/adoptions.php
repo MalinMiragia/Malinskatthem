@@ -36,3 +36,6 @@ if ($adoption_tips->have_posts() ) {
             </div> <!-- row -->
         </div>  <!-- container -->
 	</div>  <!-- wrapper-cats -->
+<?php
+}
+?>

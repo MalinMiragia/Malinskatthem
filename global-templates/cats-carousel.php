@@ -16,11 +16,11 @@ $our_cats = new WP_Query( [
     'posts_per_page'    =>      3,
 ]);
 
-$counter = count($our_cats);
+$counter = count($our_cats->posts);
 
 $count = 0;
 
-
+print_r($our_cats);
 
 if ($our_cats->have_posts() ) {
 
@@ -30,10 +30,10 @@ if ($our_cats->have_posts() ) {
         <div class="container">
             <div class="row">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
+                    <div class="carousel-inner">
                         <?php while ($our_cats->have_posts()) : $our_cats->the_post(); ?>
                             <?php
-                                $post_tumbnail = get_the_post_tumbnail_url(get_the_id(),'full');
+                                $post_tumbnail = get_the_post_tumbnail_url(get_the_id());
                             ?>
 
                             <div class="carousel-item <?php if($count <= 0) {echo "active"; } ?>">
@@ -64,3 +64,6 @@ if ($our_cats->have_posts() ) {
             </div> <!-- row -->
         </div>  <!-- container -->
 	</div>  <!-- wrapper-slider -->
+    <?php
+}
+?>

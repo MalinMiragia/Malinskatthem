@@ -36,3 +36,6 @@ if ($our_cats->have_posts() ) {
             </div> <!-- row -->
         </div>  <!-- container -->
 	</div>  <!-- wrapper-cats -->
+<?php
+}
+?>

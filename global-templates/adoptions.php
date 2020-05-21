@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 // get the three latest adoption tips
 
-$our_cats = new WP_Query( [
+$adoption_tips = new WP_Query( [
     'post_type'         =>      'adoption_tips',
     'posts_per_page'    =>      3,
 ]);
@@ -35,7 +35,7 @@ if ($adoption_tips->have_posts() ) {
             ?>
             </div> <!-- row -->
         </div>  <!-- container -->
-	</div>  <!-- wrapper-cats -->
+	</div>  <!-- wrapper-adoption -->
 <?php
 }
 ?>

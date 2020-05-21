@@ -8,6 +8,11 @@
 
     <h2><a href="<? the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
+    <?php $terms = get_the_terms( $post->ID , 'cat_gender' );
+                foreach($terms as $term) : 
+                    echo $term->name;
+                endforeach; ?>
+
     <?php the_excerpt(); ?>
 
     <div><?php the_category(); ?></div>

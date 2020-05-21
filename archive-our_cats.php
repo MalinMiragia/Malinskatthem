@@ -11,7 +11,7 @@
                 <!-- Posts  -->
                 <div class="row">
                     <?php while ( have_posts() ) : the_post(); ?>
-                        <?php get_template_part('loop-templates/content', 'archive'); ?>
+                        <?php get_template_part('loop-templates/content', 'archivecat'); ?>
                     <?php endwhile; ?>
                 </div> <!-- End of posts -->
             <?php endif; ?>

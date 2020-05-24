@@ -35,13 +35,17 @@ if ($our_cats->have_posts() ) {
                                 $post_tumbnail = get_the_post_thumbnail_url(get_the_id());
                             ?>
 
-                            <div class="carousel-item <?php if($count <= 0) {echo "active"; } ?>">
-                                <img class="d-block w-100" src="<?php echo esc_url($post_tumbnail); ?>" alt="<?php the_title(); ?>">
-                                <?php the_title(); ?>
+                            <div class="carousel-item w-100 <?php if($count <= 0) {echo "active"; } ?>" >
+                                <!-- <img class="d-block w-100" src="<?php // echo esc_url($post_tumbnail); ?>" alt="<?php //the_title(); ?>"> -->
+                                    <div class="w-100" style="background-image: url('<?php echo $post_thumbnail; ?>');">
+                                        <div class="carousel-post">
+                                           <h1> <?php the_title(); ?></h1>
+                                        </div>
+                                    </div>
                             </div>
                             
                             <?php
-                            var_dump($count);
+                            // var_dump($count);
                             $count++;
                             ?>
                     

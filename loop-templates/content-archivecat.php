@@ -12,6 +12,10 @@
                 foreach($terms as $term) : 
                     echo $term->name;
                 endforeach; ?>
+                   <?php $terms = get_the_terms( $post->ID , 'cat_town' );
+                foreach($terms as $term) : 
+                    echo $term->name;
+                endforeach; ?>
 
     <?php the_excerpt(); ?>
 

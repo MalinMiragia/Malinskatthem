@@ -2,8 +2,8 @@
     get_header();
 ?>
 <div class="container">
-    <h2><?php _e('Archive', 'my-basic-theme'); ?></h2>
-<h1> cats archive </h1>
+    <h2><?php _e('Archive', 'Katthemmet'); ?></h2>
+
     <div class="row">
         <div class="col-md-9 content">
             <!-- Loop here	 -->

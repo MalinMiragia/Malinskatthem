@@ -9,13 +9,13 @@
     $bg_color = get_field('hero_background_color');
 ?>
 
-<section id="front-page-hero" style="background_color: <?php echo $bg_color; ?>">
-    <div class="container">
+<section id="front-page-hero" style="background_color: <?php echo $bg_color; ?>; background-image: url('<?php echo $image['url']; ?>');">
+    <div class="container h-100">
+        <div class="hero-content justify-content-center align-self-center">
         <h1><?php the_field('hero_title'); ?></h1>
         <h2><?php the_field('hero_subtitle'); ?></h2>
+        </div>
 
-
-        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
     </div>
 </section>
 

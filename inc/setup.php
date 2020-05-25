@@ -25,7 +25,7 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 	 */
 	function understrap_setup() {
 		
-		add_image_size( 'custom-size', 220, 180 ); // 220 pixels wide by 180 pixels tall, soft proportional crop mode
+		add_image_size( 'custom-size', 1140, 500 ); 
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.

@@ -35,7 +35,7 @@ if ($our_cats->have_posts() ) {
                                 $post_thumbnail = get_the_post_thumbnail_url(get_the_id());
                             ?>
 
-                            <div class="carousel-item  <?php if($count <= 0) {echo "active"; } ?>" Style="background-image: url('<?php echo $post_thumbnail; ?>" >
+                            <div class="carousel-item justify-content-center  <?php if($count <= 0) {echo "active"; } ?>" Style="background-image: url('<?php echo $post_thumbnail; ?>" >
                                 <!-- <img class="d-block w-100" src="<?php // echo esc_url($post_thumbnail); ?>" alt="<?php //the_title(); ?>"> -->
                                     <h1><a href="<? the_permalink(); ?>"> <?php the_title(); ?></a></h1>
                             </div>

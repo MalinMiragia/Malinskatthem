@@ -22,45 +22,7 @@ defined( 'ABSPATH' ) || exit;
 
 	</header><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
-	<?php 
-$images = get_field('cats_gallery');
-if( $images ): ?>
-    <ul>
-        <?php foreach( $images as $image ): ?>
-            <li>
-                <a href="<?php echo esc_url($image['url']); ?>">
-                     <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                </a>
-                <p><?php echo esc_html($image['caption']); ?></p>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
-
-	<!-- Cats taxanomies Gender and Type-->
-	<div class="cat-taxanomies">
-	
-            <?php $terms = get_the_terms( $post->ID , 'cat_gender' );
-                foreach($terms as $term) : 
-                    echo $term->name;
-                endforeach; ?>
-				
-				
-            <?php $terms = get_the_terms( $post->ID , 'cat_town' );
-                foreach($terms as $term) : 
-                    echo $term->name;
-				endforeach; ?>
-				
-				<?php the_field('cat_name')?>
-				<?php the_field('cat_age')?>
-				<?php the_field('cat_color')?>
-				<?php the_field('cat_weight')?>
-				<?php the_field('cat_adopted_when')?>
-
-                
-	</div>
 	<div class="entry-content">
 
 		<?php the_content(); ?>

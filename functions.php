@@ -18,6 +18,7 @@ $understrap_includes = array(
 	'/hooks.php',                           // Custom hooks.
 	'/custom-posttypes.php',				// Custom postTypes.
 	'/custom-taxonomies.php',				// Custom taxonomies.
+	'/acf.php',								// Load ACF Plugin.
 	'/extras.php',                          // Custom functions that act independently of the theme templates.
 	'/customizer.php',                      // Customizer additions.
 	'/custom-comments.php',                 // Custom Comments file.

@@ -43,15 +43,15 @@ if( $images ): ?>
 	<div class="cat-taxanomies">
 				
 				<h2><?php the_field('cat_name')?></h2><br>
-				<?php the_field('cat_age')?><br>
-				<?php $terms = get_the_terms( $post->ID , 'cat_town' );
-                foreach($terms as $term) : 
+					<?php the_field('cat_age')?><br>
+					<?php $terms = get_the_terms( $post->ID , 'cat_town' );
+                	foreach($terms as $term) : 
                     echo $term->name;
-				endforeach; ?><br>
+					endforeach; ?><br>
 				<?php $terms = get_the_terms( $post->ID , 'cat_gender' );
-                foreach($terms as $term) : 
+                	foreach($terms as $term) : 
                     echo $term->name;
-                endforeach; ?><br>
+                	endforeach; ?><br>
 				<?php the_field('cat_color')?><br>
 				<?php the_field('cat_weight')?><br>
 				<?php the_field('cat_adopted_when')?><br>
